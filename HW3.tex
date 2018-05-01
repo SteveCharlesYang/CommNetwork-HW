@@ -1,24 +1,59 @@
 \documentclass[]{article}
-\usepackage{cite}
 %opening
-\title{Critical review on communication security between autonomous driver-less vehicles}
-\author{Chang Yang}
-
+\title{Homework 3 of Communication Network}
+\author{Chang Yang 2016200301010}
 \begin{document}
 
 \maketitle
 
-\section{Introduction}
-For a long time the concept of car safety was synonymous with seatbelts, an adequately sized crumple zone, and air bags. Devices such as these protect drivers and passengers from physical dangers caused by accidents. But in the age of the connected car, safety functionality may also be impacted negatively by humans deliberately deploying cyber-attacks on the car similar to those seen on the internet for some time. Therefore cyber-security in the car becomes a priority.
+\section{}
+8 interfaces; 3 forwarding tables.
 
-\section{Reviews}
-With the popularization and application of new communication technologies, the CAN bus, as an ancient communication technology, has not kept pace with the development of smart driving technology. Nowadays, the common communication methods of the Internet, such as Ethernet, 4G, and WiFi, are gradually applied to automobiles. The hackers' familiar network communication method makes new-generation cars more vulnerable.
+\section{}
+\begin{itemize}
+  \item Subnet 1: 223.1.17.0/25
+  \item Subnet 2: 223.1.17.128/26
+  \item Subnet 3: 223.1.17.192/26
+\end{itemize}
 
-In a typical V2X (Vehicle-to-everything) system, cellular networks and 802.1p protocols are used in the exchange of information between vehicles and the outside world.
+\section{}
+Begin:
+\begin{center}
+  \begin{tabular}{|l|l|l|l|l|l|}
+  \hline
+    & x & y  & z & u & v \\ \hline
+  x & 0 & 1  & 2 & 2 & ∞ \\ \hline
+  z & 2 & 10 & 0 & ∞ & 5 \\ \hline
+  v & ∞ & 15 & 5 & 1 & 0 \\ \hline
+  \end{tabular}
+\end{center}
+End:
+\begin{center}
+  \begin{tabular}{|l|l|l|l|l|l|}
+  \hline
+    & x & y  & z & u & v \\ \hline
+  x & 0 & 1  & 2 & 2 & 3 \\ \hline
+  z & 2 & 10 & 0 & 4 & 5 \\ \hline
+  v & 3 & 15 & 5 & 1 & 0 \\ \hline
+  \end{tabular}
+\end{center}
 
-\section{Summary}
+\section{}
+First we need to send the packets in the link, which needs the transmission
+time. Then the last bit needs to wait for the propagation delay until it
+arrives the destination. So the total time is the sum of the transmission
+time and the propagation delay.
 
-\bibliographystyle{plain}
-\bibliography{ref}
+$$ T_{trans} = 1000 bytes \cdot \frac{8 bits}{byte}
+\cdot (\frac{sec}{10 \times 10^6 bits})^{-1} \cdot
+\frac{10^6 \mu s}{sec} = 800 \mu s $$
+
+$$ T_{prop} = 1 \mu s $$
+
+$$ T_{total} = T_{trans} + T_{prop} = 801 \mu s $$
+
+\section{}
+50\% overhead.
+IP -­> 40 bytes, TCP -­> 40 bytes.
 
 \end{document}
